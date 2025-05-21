@@ -145,7 +145,7 @@ function Contact() {
               display: "block"
             }}
           >
-            evoncapitalorg@gmail.com
+            info@advantageai.site
           </a>
         </div>
 
