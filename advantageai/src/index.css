@@ -1,0 +1,93 @@
+:root {
+  --base-font-size: clamp(16px, 1vw, 18px);
+  --heading-font-size: clamp(2.5rem, 4vw, 4.5rem);
+  --content-width: min(90%, 1200px);
+  --spacing-unit: clamp(0.5rem, 1vw, 1rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--base-font-size);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(180deg, rgb(117, 81, 194), rgb(255, 255, 255));
+  display: flex;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+button {
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: white;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+ul {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+  border: 1px solid black;
+  gap: 1px;
+  background-color: black;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+li {
+  background-color: white;
+  padding: 8px;
+}
+
+li:hover {
+  background: #dadbf9;
+}
+
+a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
