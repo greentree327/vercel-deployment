@@ -39,7 +39,7 @@ function Contact() {
         body: JSON.stringify({
           to: formData.email,
           fromName: 'AdVantage AI',
-          fromEmail: 'jackson3b04@gmail.com',
+          fromEmail: 'info@advantageai.site',
           subject: 'Demo Request Confirmation - AdVantage AI',
           html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6;">
@@ -137,7 +137,7 @@ function Contact() {
             color: "#333"
           }}>General enquiries</h2>
           <a 
-            href="mailto:evoncapitalorg@gmail.com"
+            href="mailto:info@advantageai.site"
             style={{
               color: "#333",
               textDecoration: "none",
