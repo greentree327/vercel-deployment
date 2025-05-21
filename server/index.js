@@ -4,6 +4,11 @@ const app = express();
 const port = 3001; // Or any port you prefer
 const cors = require('cors');
 
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
 const sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 
@@ -13,7 +18,9 @@ sgMail.setApiKey(API_KEY);
 
 // Enable CORS with multiple origins
 app.use(cors({
-    origin: ['https://vercel-deployment-client-nine.vercel.app/', // Your React app's URL, allows requests from React app
+    // Your React app's URL, allows requests from React app
+    origin: ['https://vercel-deployment-client-bm88ldwom-jacksons-projects-75570fff.vercel.app', // remove all trailing slashes(/) from URLS
+            'https://vercel-deployment-client-nine.vercel.app/', // Add all variations of my frontend URL
             'http://localhost:3000' // Keep local development working
     ],
     methods: ['POST'],
