@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://sendgrid-ks2awra58-jacksons-projects-75570fff.vercel.app/api/send-email'
+  ? 'https://vercel-deployment-server-plum.vercel.app/api/send-email'
   : 'http://localhost:3001/api/send-email';
 
 const contactHeader = {

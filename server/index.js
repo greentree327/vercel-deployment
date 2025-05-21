@@ -11,9 +11,11 @@ require('dotenv').config();
 const API_KEY = process.env.SENDGRID_API_KEY;
 sgMail.setApiKey(API_KEY);
 
-// Enable CORS
+// Enable CORS with multiple origins
 app.use(cors({
-    origin: 'http://localhost:3000', // Your React app's URL, allows requests from React app
+    origin: ['https://vercel-deployment-client-nine.vercel.app/', // Your React app's URL, allows requests from React app
+            'http://localhost:3000' // Keep local development working
+    ],
     methods: ['POST'],
     allowedHeaders: ['Content-Type'],
 }));
