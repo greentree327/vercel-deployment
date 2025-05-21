@@ -20,7 +20,7 @@ sgMail.setApiKey(API_KEY);
 app.use(cors({
     // Your React app's URL, allows requests from React app
     origin: ['https://vercel-deployment-client-bm88ldwom-jacksons-projects-75570fff.vercel.app', // remove all trailing slashes(/) from URLS
-            'https://vercel-deployment-client-nine.vercel.app/', // Add all variations of my frontend URL
+            'https://vercel-deployment-client-nine.vercel.app', // Add all variations of my frontend URL
             'http://localhost:3000' // Keep local development working
     ],
     methods: ['POST'],
