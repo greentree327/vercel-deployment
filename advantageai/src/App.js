@@ -16,27 +16,30 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Header />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <HeroSection />
-              <Features />
-              <UserExperience />
-              <Customers />
-            </>
-          } />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/meta-ads" element={<BlogMetaAds />} />
-          <Route path="/blog/chatbot" element={<BlogChatbot />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <>
+      <Router>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <HeroSection />
+                <Features />
+                <UserExperience />
+                <Customers />
+              </>
+            } />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/meta-ads" element={<BlogMetaAds />} />
+            <Route path="/blog/chatbot" element={<BlogChatbot />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+      <Analytics />
+    </>
   );
 }
 
