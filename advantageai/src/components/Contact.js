@@ -15,7 +15,7 @@ function Contact() {
     lastName: '',
     email: '',
     businessType: '',
-    websiteUrl: ''
+    websiteUrl: '' //
   });
 
   const handleInputChange = (e) => {
