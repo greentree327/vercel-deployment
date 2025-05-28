@@ -47,7 +47,7 @@ function Contact() {
 
               <p>Thank you for your interest in AdVantage AI. We look forward to helping your ${formData.businessType} business.</p>
 
-              <p>Our team will review your <a href="${formData.websiteUrl}" style="color: #0066cc; text-decoration: none;">website</a> and contact you soon with a tailored AI solution.</p>
+              <p>Our team will review your <a href="${formData.websiteUrl || "www.example.com"}" style="color: #0066cc; text-decoration: none;">website</a> and contact you soon with a tailored AI solution.</p>
 
               <p>Best regards,<br/>
               AdVantage AI Team</p>
@@ -288,7 +288,7 @@ function Contact() {
                 value={formData.websiteUrl}
                 onChange={handleInputChange}
                 placeholder="yourcompany.com"
-                required
+                // required
                 style={{
                   padding: "12px",
                   fontSize: "1rem",
