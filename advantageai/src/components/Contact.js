@@ -47,7 +47,15 @@ function Contact() {
 
               <p>Thank you for your interest in AdVantage AI. We look forward to helping your ${formData.businessType} business.</p>
 
-              <p>Our team will review your <a href="${formData.websiteUrl || "www.example.com"}" style="color: #0066cc; text-decoration: none;">website</a> and contact you soon with a tailored AI solution.</p>
+              <p>Our team will ${
+      formData.websiteUrl 
+        ? `review your <a href="${
+            formData.websiteUrl.startsWith('http') 
+              ? formData.websiteUrl 
+              : `https://${formData.websiteUrl}`
+          }" style="color: #0066cc; text-decoration: none;">website</a>` 
+        : 'prepare a personalized strategy'
+    } and contact you soon with a tailored AI solution.</p>
 
               <p>Best regards,<br/>
               AdVantage AI Team</p>
@@ -281,7 +289,7 @@ function Contact() {
                 fontSize: "1rem",
                 color: "#333",
                 display: "block"
-              }}>Brand/Agency Website URL*</label>
+              }}>Brand/Agency Website URL (optional)</label>
               <input
                 type="url"
                 name="websiteUrl"
