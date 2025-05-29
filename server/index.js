@@ -4,17 +4,14 @@ const app = express();
 const port = 3001; // Or any port you prefer
 const cors = require('cors');
 
+
 const corsOptions ={
    origin:'*', 
    credentials:true,            //access-control-allow-credentials:true
    optionSuccessStatus:200,
 }
-const sgMail = require('@sendgrid/mail');
-require('dotenv').config();
 
-// It's highly recommended to store your API Key in an environment variable
-const API_KEY = process.env.SENDGRID_API_KEY;
-sgMail.setApiKey(API_KEY);
+// First: CORS middleware ##########
 
 // Enable CORS with multiple origins
 app.use(cors({
@@ -29,6 +26,27 @@ app.use(cors({
 }));
 
 app.use(express.json()); // Middleware to parse JSON bodies
+
+
+// Second: Register routes ##########
+
+// Import chat routes for Google AI integration
+const chatRoutes = require('./routes/chat');
+// Register chat routes under /api prefix
+// This will make the chat endpoint available at /api/chat
+app.use('/api', chatRoutes);
+
+// Route for mail delivery
+const sgMail = require('@sendgrid/mail');
+require('dotenv').config();
+
+// It's highly recommended to store your API Key in an environment variable
+const API_KEY = process.env.SENDGRID_API_KEY;
+sgMail.setApiKey(API_KEY);
+
+
+
+
 
 // app.use(path, handler): respond with ("Server is running") for any http request (get, post, put, etc) send to /
 // app.use("/", (req, res) => {
