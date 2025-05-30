@@ -1,0 +1,88 @@
+/* 
+ * Chat Window Styles with Zoom Prevention
+ * --------------------------------------
+ * 1. Fixed size: width and height are set with !important to override any zoom effects
+ * 2. Transform scale(1) forces the element to maintain its scale regardless of browser zoom
+ * 3. Transform-origin sets the scaling point to bottom right to match the button position
+ * 4. Using min/max dimensions ensures the chat window stays within reasonable bounds
+ * 5. Vendor prefixes (-webkit, -moz) ensure cross-browser compatibility
+ */
+.chat-window {
+  /* Core positioning */
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 60px !important;
+
+  /* Fixed dimensions to prevent zoom affecting size */
+  width: 450px !important;
+  height: min(700px, 90vh) !important;
+  min-width: 350px !important;
+  min-height: 500px !important;
+
+  /* Scale control to prevent zoom effects */
+  transform: scale(1) !important;
+  transform-origin: bottom right !important;
+  -webkit-transform: scale(1) !important;
+  -moz-transform: scale(1) !important;
+
+  /* Base font size to maintain text size */
+  font-size: 16px !important;
+
+  /* Visual styles */
+  background-color: white !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
+  z-index: 1001 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.chat-window * {
+  font-size: min(16px, 4vmin) !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.demo-button-container {
+  animation: fadeIn 0.5s ease-out;
+  margin: 10px 0;
+}
+
+.demo-button {
+  background-color: #6B46FE !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  cursor: pointer !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(107, 70, 254, 0.2) !important;
+}
+
+.demo-button:hover {
+  background-color: #5635d1 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(107, 70, 254, 0.3) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .chat-window {
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+}
